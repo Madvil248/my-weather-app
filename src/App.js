@@ -8,7 +8,6 @@ import TopBar from "./components/top-bar";
 import "weather-icons/css/weather-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { connect } from "react-redux";
-import { geolocated } from "react-geolocated";
 
 class App extends Component {
   render() {
