@@ -8,7 +8,7 @@ class Favorites extends Component {
     return (
       <div className="container mt-3 px-0">
         <div className="card py-3 px-4 justify-content-md-center">
-          <div className="card-deck mb-3 text-center">
+          <div className="card-deck mb-3 text-center row justify-content-center">
             {this.props.favorites.length > 0
               ? this.props.favorites.map((data) => {
                   return (
