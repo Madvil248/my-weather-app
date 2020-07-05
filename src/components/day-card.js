@@ -20,6 +20,7 @@ function _minMaxTemp(temp) {
   return (
     <p className="card-text col">
       <span className="px-1">{temp.Minimum.Value}&deg;</span>
+      <span className="px-1">-</span>
       <span className="px-1">{temp.Maximum.Value}&deg;</span>
     </p>
   );
