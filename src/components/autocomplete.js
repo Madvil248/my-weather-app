@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ACCU_AUTO } from "../services/response";
+import { ACCU_AUTO, SELECTED } from "../services/response";
 import { connect } from "react-redux";
 import { getLocationAutocomplete, getWeather } from "../config/main";
 import { setCity, setForecast } from "../actions/index";
@@ -21,9 +21,10 @@ export class Autocomplete extends Component {
   }
 
   setSelectedCity(selectedCity) {
-    getWeather(selectedCity.Key).then((forecast) => {
-      this.props.dispatch(setCity(Object.assign({}, selectedCity, forecast)));
-    });
+    this.props.dispatch(setCity(SELECTED));
+    // getWeather(selectedCity.Key).then((forecast) => {
+    //   this.props.dispatch(setCity(Object.assign({}, selectedCity, forecast)));
+    // });
   }
 
   onChange = (e) => {

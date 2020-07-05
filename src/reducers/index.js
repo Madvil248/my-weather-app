@@ -1,5 +1,5 @@
 import * as types from "../actions/actionTypes";
-import { ACCU_RESPONSE, SELECTED } from "../services/response";
+import { SELECTED } from "../services/response";
 
 var initialState = {
   currentView: 0,
@@ -7,7 +7,7 @@ var initialState = {
   favorites: [],
   lightTheme: true,
   latitude: 0,
-  longitude: 0
+  longitude: 0,
 };
 
 export default function mainReducer(state = initialState, action) {
@@ -29,11 +29,11 @@ export default function mainReducer(state = initialState, action) {
       return Object.assign({}, state, {
         lightTheme: action.checked,
       });
-      case types.SET_LAT_LNG:
-        return Object.assign({}, state, {
-          latitude: action.lat,
-          longitude: action.lng,
-        });
+    case types.SET_LAT_LNG:
+      return Object.assign({}, state, {
+        latitude: action.lat,
+        longitude: action.lng,
+      });
     default:
       return state;
   }
