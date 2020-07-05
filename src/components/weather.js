@@ -6,10 +6,6 @@ import { toggleFavorite } from "../actions/index";
 import { toggleFav } from "../config/main";
 
 class Weather extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const props = this.props;
     const city = props.selected.LocalizedName;

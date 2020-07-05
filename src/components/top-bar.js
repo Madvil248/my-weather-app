@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import DayCard from "./day-card";
-import Svgs from "../styles/svgs";
 import { connect } from "react-redux";
 import { toggleView, switchTheme, setLatLng } from "../actions/index";
 import { toggleFav } from "../config/main";
@@ -15,10 +13,10 @@ class TopBar extends Component {
             <a
               href="#"
               className={`nav-item nav-link p-2 font-weight-bold ${
-                this.props.currentView == 0 ? "active" : ""
+                this.props.currentView === 0 ? "active" : ""
               }`}
               onClick={() => {
-                if (this.props.currentView == 0) return;
+                if (this.props.currentView === 0) return;
                 this.props.dispatch(toggleView(0));
               }}
             >
@@ -29,10 +27,10 @@ class TopBar extends Component {
             <a
               href="#"
               className={`nav-item nav-link p-2 font-weight-bold ${
-                this.props.currentView == 1 ? "active" : ""
+                this.props.currentView === 1 ? "active" : ""
               }`}
               onClick={() => {
-                if (this.props.currentView == 1) return;
+                if (this.props.currentView === 1) return;
                 this.props.dispatch(toggleView(1));
               }}
             >

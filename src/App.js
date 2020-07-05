@@ -22,7 +22,7 @@ class App extends Component {
       >
         <TopBar />
         <Autocomplete />
-        {this.props.currentView == 0 ? <Weather /> : <Favorites />}
+        {this.props.currentView === 0 ? <Weather /> : <Favorites />}
       </div>
     );
   }

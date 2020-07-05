@@ -11,7 +11,7 @@ const CountryCard = (props) => {
         <p className="card-text">{props.data.LocalizedName}</p>
         <p className="card-text">{props.data.Country.LocalizedName}</p>
         <a
-          href="#"
+          href="/"
           onClick={() => {
             props.dispatch(
               toggleFavorite(toggleFav(props.favorites, props.data))

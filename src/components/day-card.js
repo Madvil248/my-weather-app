@@ -1,5 +1,5 @@
 import React from "react";
-import Common from "../services/common";
+import { getWeekDayNameByDate } from "../services/common";
 
 const DayCard = (props) => {
   return (
@@ -7,7 +7,7 @@ const DayCard = (props) => {
       <div className="card mx-1 shadow-sm">
         <div className="card-body px-1">
           <h5 className="card-title">
-            {Common.getWeekDayNameByDate(props.data.Date)}
+            {getWeekDayNameByDate(props.data.Date)}
           </h5>
           {_minMaxTemp(props.data.Temperature)}
         </div>
