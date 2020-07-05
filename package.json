@@ -12,7 +12,6 @@
     "react-redux": "^7.2.0",
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
-    "weather-icons": "git+https://github.com/erikflowers/weather-icons.git"
   },
   "scripts": {
     "start": "react-scripts start",
