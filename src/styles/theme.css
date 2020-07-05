@@ -21,15 +21,22 @@ body .light-theme,
 .light-theme .nav-pills .nav-link.active,
 .light-theme .nav-pills .show > .nav-link,
 .light-theme .nav-pills .nav-link.active:hover,
+.light-theme .nav-pills .nav-link.active:focus,
 .light-theme a.text-light:focus,
 .light-theme a.text-light:hover,
 .light-theme .btn-primary:not(:disabled):not(.disabled).active,
 .light-theme .btn-primary:not(:disabled):not(.disabled):active,
 .light-theme .btn-primary,
-.light-theme .btn-primary:hover {
+.light-theme .btn-primary:hover,
+.light-theme .btn-primary:focus {
   background-color: #ffd6ba;
   border-color: #ffd6ba;
   color: #faf9f9 !important;
+  outline: none;
+}
+
+.light-theme button:focus {
+  outline: none;
 }
 
 .light-theme .form-control,
@@ -62,16 +69,23 @@ body .dark-theme,
 
 .dark-theme .nav-pills .nav-link.active,
 .dark-theme .nav-pills .show > .nav-link,
-.dark-theme .nav-pills .nav-link.active:hover,
+.dark-theme .nav-pills .nav-link:hover,
+.dark-theme .nav-pills .nav-link:focus,
 .dark-theme a.text-light:focus,
 .dark-theme a.text-light:hover,
 .dark-theme .btn-primary:not(:disabled):not(.disabled).active,
 .dark-theme .btn-primary:not(:disabled):not(.disabled):active,
 .dark-theme .btn-primary,
-.dark-theme .btn-primary:hover {
+.dark-theme .btn-primary:hover,
+.dark-theme .btn-primary:focus {
   background-color: #582400;
   border-color: #582400;
   color: #f3fbfb !important;
+  outline: none;
+}
+
+.dark-theme button:focus {
+  outline: none;
 }
 
 .dark-theme .form-control,

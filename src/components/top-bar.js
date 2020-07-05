@@ -36,7 +36,7 @@ class TopBar extends Component {
               Favorites
             </button>
           </li>
-          <li>
+          <li className="pl-2">
             <div className="custom-control custom-switch pt-2">
               <input
                 type="checkbox"

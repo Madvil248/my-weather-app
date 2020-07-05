@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import "./styles/theme.css";
-import "weather-icons/css/weather-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { connect } from "react-redux";
@@ -15,6 +14,7 @@ import Autocomplete from "./components/autocomplete";
 import TopBar from "./components/top-bar";
 
 class App extends Component {
+
   componentDidMount() {
     this.props.dispatch(setCity(SELECTED));
     // getWeather(215854).then((forecast) => {
