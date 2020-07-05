@@ -1,7 +1,7 @@
 import { ACCU_AUTO, ACCU_FORECAST } from "../services/response";
 
 const ACCU_WEATHER_API = "VY5zhy7sWbOEoJoDxGpU02DYwGztpSKw";
-const ACCU_WEATHER_HOST = "http://dataservice.accuweather.com/";
+const ACCU_WEATHER_HOST = "https://dataservice.accuweather.com/";
 const ACCU_VERSION = "v1";
 
 const LocationApiAutocomplete = (query) =>
