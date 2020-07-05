@@ -14,12 +14,11 @@ class App extends Component {
     if (this.props.coords) {
       console.log(this.props.coords);
     }
+    const themeClass = `pb-3 ${
+      this.props.lightTheme ? "light-theme" : "dark-theme"
+    }`;
     return (
-      <div
-        className={
-          "pb-3 " + `${this.props.lightTheme ? "light-theme" : "dark-theme"}`
-        }
-      >
+      <div className={themeClass}>
         <TopBar />
         <Autocomplete />
         {this.props.currentView === 0 ? <Weather /> : <Favorites />}

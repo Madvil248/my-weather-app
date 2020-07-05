@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { ACCU_AUTO } from "../services/response";
 import { connect } from "react-redux";
 import { getLocationAutocomplete, getWeather } from "../config/main";
 import { setCity, setForecast } from "../actions/index";
@@ -13,15 +14,15 @@ export class Autocomplete extends Component {
   };
 
   getAutocomplete(searchValue) {
-    getLocationAutocomplete(searchValue).then((filteredOptions) => {
-      this.setState({ filteredOptions });
-    });
+    this.setState({ filteredOptions: ACCU_AUTO });
+    // getLocationAutocomplete(searchValue).then((filteredOptions) => {
+    //   this.setState({ filteredOptions });
+    // });
   }
 
   setSelectedCity(selectedCity) {
     getWeather(selectedCity.Key).then((forecast) => {
-      this.props.dispatch(setCity(selectedCity));
-      this.props.dispatch(setForecast(forecast));
+      this.props.dispatch(setCity(Object.assign({}, selectedCity, forecast)));
     });
   }
 

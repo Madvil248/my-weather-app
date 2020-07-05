@@ -1,32 +1,16 @@
 import React from "react";
-import Svgs from "../styles/svgs";
-import { connect } from "react-redux";
-import { toggleFavorite } from "../actions/index";
-import { toggleFav } from "../config/main";
 
 const CountryCard = (props) => {
+  const forecast = props.data.DailyForecasts[0];
   return (
-    <div className="card mb-4 shadow-sm">
+    <div className="card mb-4 shadow-sm country-card" onClick={props.onClick}>
       <div className="card-body">
-        <p className="card-text">{props.data.LocalizedName}</p>
-        <p className="card-text">{props.data.Country.LocalizedName}</p>
-        <a
-          href="/"
-          onClick={() => {
-            props.dispatch(
-              toggleFavorite(toggleFav(props.favorites, props.data))
-            );
-          }}
-        >
-          <Svgs size="3em" icon="heart-full" />
-        </a>
+        <h3 className="card-text">{props.data.LocalizedName}</h3>
+        <p className="card-text">{forecast.Day.IconPhrase}</p>
+        <p className="card-text">{forecast.Temperature.Maximum.Value}&deg;</p>
       </div>
     </div>
   );
 };
 
-function mapStateToProps(state) {
-  return state;
-}
-
-export default connect(mapStateToProps)(CountryCard);
+export default CountryCard;

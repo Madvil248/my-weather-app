@@ -36,6 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+body p,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5 {
+  cursor: default;
+}
+
 .custom-switch .my-switch {
   z-index: 10;
+}
+
+button {
+  border: none;
+  background: transparent;
+}
+button.custom-button:focus,
+button:focus {
+  outline: 0;
+}
+
+.country-card,
+.country-card h3,
+.country-card p {
+  cursor: pointer;
 }

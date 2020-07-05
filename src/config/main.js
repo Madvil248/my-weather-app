@@ -1,4 +1,4 @@
-import { ACCU_AUTO, ACCU_RESPONSE } from "../services/response";
+// import { ACCU_AUTO, ACCU_RESPONSE } from "../services/response";
 
 const ACCU_WEATHER_API = "VY5zhy7sWbOEoJoDxGpU02DYwGztpSKw";
 const ACCU_WEATHER_HOST = "http://dataservice.accuweather.com/";
@@ -8,7 +8,7 @@ const LocationApiAutocomplete = (query) =>
   `${ACCU_WEATHER_HOST}locations/${ACCU_VERSION}/cities/autocomplete?apikey=${ACCU_WEATHER_API}&q=${query}`;
 
 const WeatherApiUrl = (key) =>
-  `${ACCU_WEATHER_HOST}forecasts/${ACCU_VERSION}/daily/5day/${key}?apikey=${ACCU_WEATHER_API}`;
+  `${ACCU_WEATHER_HOST}forecasts/${ACCU_VERSION}/daily/5day/${key}?apikey=${ACCU_WEATHER_API}&metric=true`;
 
 export function getLocationAutocomplete(query) {
   return fetch(LocationApiAutocomplete(query))

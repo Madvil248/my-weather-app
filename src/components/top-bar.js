@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { toggleView, switchTheme, setLatLng } from "../actions/index";
-import { toggleFav } from "../config/main";
+import { toggleView, switchTheme } from "../actions/index";
 
 class TopBar extends Component {
   render() {
@@ -10,7 +9,7 @@ class TopBar extends Component {
         <h5 className="my-0 mr-md-auto font-weight-bold">Herolo Weather App</h5>
         <ul className="nav nav-pills ml-auto">
           <li className="nav-item">
-            <a
+            <button
               href="#"
               className={`nav-item nav-link p-2 font-weight-bold ${
                 this.props.currentView === 0 ? "active" : ""
@@ -21,10 +20,10 @@ class TopBar extends Component {
               }}
             >
               Home
-            </a>
+            </button>
           </li>
           <li className="nav-item">
-            <a
+            <button
               href="#"
               className={`nav-item nav-link p-2 font-weight-bold ${
                 this.props.currentView === 1 ? "active" : ""
@@ -35,7 +34,7 @@ class TopBar extends Component {
               }}
             >
               Favorites
-            </a>
+            </button>
           </li>
           <li>
             <div className="custom-control custom-switch pt-2">

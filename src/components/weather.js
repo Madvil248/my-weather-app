@@ -6,6 +6,14 @@ import { toggleFavorite } from "../actions/index";
 import { toggleFav } from "../config/main";
 
 class Weather extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isFav:
+        this.props.favorites.filter((e) => this.props.selected.Key === e.Key)
+          .length > 0,
+    };
+  }
   render() {
     const props = this.props;
     const city = props.selected.LocalizedName;
@@ -16,30 +24,36 @@ class Weather extends Component {
           <div className="d-flex flex-column flex-md-row align-items-top">
             <div className="mr-md-auto">
               <h1>{`${city}, ${country}`}</h1>
-              <h5 className="py-2">
-                <i className="wi wi-day-sunny display-1"></i>
-              </h5>
               <h4 className="py-3">
-                {props.forecast.DailyForecasts
-                  ? props.forecast.DailyForecasts[0].Day.IconPhrase
+                {props.selected.DailyForecasts
+                  ? props.selected.DailyForecasts[0].Day.IconPhrase
                   : ""}
               </h4>
             </div>
             <div className="center-block mb-5">
-              <a
-                href="#"
+              <button
+                className="custom-button"
                 onClick={() => {
+                  this.setState({ isFav: !this.state.isFav });
                   props.dispatch(
-                    toggleFavorite(toggleFav(props.favorites, props.selected))
+                    toggleFavorite(
+                      toggleFav(
+                        props.favorites,
+                        Object.assign({}, props.selected, props.forecast)
+                      )
+                    )
                   );
                 }}
               >
-                <Svgs size="3em" icon={props.newFav ? "heart-full" : "heart"} />
-              </a>
+                <Svgs
+                  size="3em"
+                  icon={this.state.isFav ? "heart-full" : "heart"}
+                />
+              </button>
             </div>
           </div>
-          {props.forecast
-            ? this._dailyCards(props.forecast.DailyForecasts)
+          {props.selected.DailyForecasts
+            ? this._dailyCards(props.selected.DailyForecasts)
             : ""}
         </div>
       </div>

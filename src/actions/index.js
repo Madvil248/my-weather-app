@@ -15,11 +15,6 @@ export const setCity = (selected) => ({
   selected,
 });
 
-export const setForecast = (forecast) => ({
-  type: types.SET_FORECAST,
-  forecast,
-});
-
 export const switchTheme = (checked) => ({
   type: types.SET_THEME,
   checked,
