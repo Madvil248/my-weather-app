@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { connect } from "react-redux";
 import { getWeather } from "./config/main";
 import { setCity } from "./actions/index";
-import { SELECTED } from "./services/response";
+import { SELECTED,ACCU_FORECAST } from "./services/response";
 
 import Weather from "./components/weather";
 import Favorites from "./components/favorites";
@@ -17,15 +17,13 @@ const TEL_AVIV_KEY = 215854;
 
 class App extends Component {
   componentDidMount() {
+    // this.props.dispatch(setCity(Object.assign({}, SELECTED, ACCU_FORECAST)));
     getWeather(TEL_AVIV_KEY).then((forecast) => {
       this.props.dispatch(setCity(Object.assign({}, SELECTED, forecast)));
     });
   }
 
   render() {
-    if (this.props.coords) {
-      console.log(this.props.coords);
-    }
     const themeClass = `pb-3 ${
       this.props.lightTheme ? "light-theme" : "dark-theme"
     }`;

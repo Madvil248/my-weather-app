@@ -2,6 +2,7 @@ import React from "react";
 import { getWeekDayNameByDate } from "../services/common";
 
 const DayCard = (props) => {
+  const temperature = props.data.Temperature.Maximum.Value;
   return (
     <div className="col-xl-2 mb-2">
       <div className="card mx-1 shadow-sm">
@@ -9,21 +10,11 @@ const DayCard = (props) => {
           <h5 className="card-title">
             {getWeekDayNameByDate(props.data.Date)}
           </h5>
-          {_minMaxTemp(props.data.Temperature)}
+          <span className="px-1">{temperature}&deg;</span>
         </div>
       </div>
     </div>
   );
 };
-
-function _minMaxTemp(temp) {
-  return (
-    <p className="card-text col">
-      <span className="px-1">{temp.Minimum.Value}&deg;</span>
-      <span className="px-1">-</span>
-      <span className="px-1">{temp.Maximum.Value}&deg;</span>
-    </p>
-  );
-}
 
 export default DayCard;

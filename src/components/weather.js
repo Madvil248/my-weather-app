@@ -6,16 +6,8 @@ import { toggleFavorite } from "../actions/index";
 import { toggleFav } from "../config/main";
 
 class Weather extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isFav:
-        this.props.favorites.filter((e) => this.props.selected.Key === e.Key)
-          .length > 0,
-    };
-  }
   render() {
-    const props = this.props;
+    let props = this.props;
     const city = props.selected.LocalizedName;
     const country = props.selected.Country.LocalizedName;
     return (
@@ -34,7 +26,6 @@ class Weather extends Component {
               <button
                 className="custom-button"
                 onClick={() => {
-                  this.setState({ isFav: !this.state.isFav });
                   props.dispatch(
                     toggleFavorite(
                       toggleFav(
@@ -45,10 +36,7 @@ class Weather extends Component {
                   );
                 }}
               >
-                <Svgs
-                  size="3em"
-                  icon={this.state.isFav ? "heart-full" : "heart"}
-                />
+                <Svgs size="3em" icon={props.isFav ? "heart-full" : "heart"} />
               </button>
             </div>
           </div>
