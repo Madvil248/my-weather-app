@@ -14,17 +14,15 @@ export class Autocomplete extends Component {
   };
 
   getAutocomplete(searchValue) {
-    this.setState({ filteredOptions: ACCU_AUTO });
-    // getLocationAutocomplete(searchValue).then((filteredOptions) => {
-    //   this.setState({ filteredOptions });
-    // });
+    getLocationAutocomplete(searchValue).then((filteredOptions) => {
+      this.setState({ filteredOptions });
+    });
   }
 
   setSelectedCity(selectedCity) {
-    this.props.dispatch(setCity(SELECTED));
-    // getWeather(selectedCity.Key).then((forecast) => {
-    //   this.props.dispatch(setCity(Object.assign({}, selectedCity, forecast)));
-    // });
+    getWeather(selectedCity.Key).then((forecast) => {
+      this.props.dispatch(setCity(Object.assign({}, selectedCity, forecast)));
+    });
   }
 
   onChange = (e) => {

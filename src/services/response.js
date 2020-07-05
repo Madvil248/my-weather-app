@@ -159,6 +159,9 @@ const SELECTED = {
   LocalizedName: "Tel Aviv",
   Country: { ID: "IL", LocalizedName: "Israel" },
   AdministrativeArea: { ID: "TA", LocalizedName: "Tel Aviv" },
+};
+
+const ACCU_FORECAST = {
   Headline: {
     EffectiveDate: "2020-07-05T20:00:00+03:00",
     EffectiveEpochDate: 1593968400,
@@ -255,4 +258,4 @@ const SELECTED = {
   ],
 };
 
-export { ACCU_AUTO, SELECTED };
+export { ACCU_AUTO, SELECTED, ACCU_FORECAST };

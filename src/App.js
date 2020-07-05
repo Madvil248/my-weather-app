@@ -13,13 +13,13 @@ import Favorites from "./components/favorites";
 import Autocomplete from "./components/autocomplete";
 import TopBar from "./components/top-bar";
 
-class App extends Component {
+const TEL_AVIV_KEY = 215854;
 
+class App extends Component {
   componentDidMount() {
-    this.props.dispatch(setCity(SELECTED));
-    // getWeather(215854).then((forecast) => {
-    //   this.props.dispatch(setCity(Object.assign({}, selectedCity, forecast)));
-    // });
+    getWeather(TEL_AVIV_KEY).then((forecast) => {
+      this.props.dispatch(setCity(Object.assign({}, SELECTED, forecast)));
+    });
   }
 
   render() {

@@ -1,4 +1,4 @@
-// import { ACCU_AUTO, ACCU_RESPONSE } from "../services/response";
+import { ACCU_AUTO, ACCU_FORECAST } from "../services/response";
 
 const ACCU_WEATHER_API = "VY5zhy7sWbOEoJoDxGpU02DYwGztpSKw";
 const ACCU_WEATHER_HOST = "http://dataservice.accuweather.com/";
@@ -17,7 +17,7 @@ export function getLocationAutocomplete(query) {
     })
     .catch(function (error) {
       console.log("Request failed", error);
-      return [];
+      return ACCU_AUTO;
     });
 }
 
@@ -28,7 +28,7 @@ export function getWeather(key) {
     })
     .catch(function (error) {
       console.log("Request failed", error);
-      return [];
+      return ACCU_FORECAST;
     });
 }
 
