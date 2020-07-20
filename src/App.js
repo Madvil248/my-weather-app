@@ -4,9 +4,9 @@ import "./styles/theme.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { connect } from "react-redux";
-import { getWeather } from "./config/main";
+import { getWeather } from "./api/main";
 import { setCity } from "./actions/index";
-import { SELECTED,ACCU_FORECAST } from "./services/response";
+import { SELECTED } from "./services/response";
 
 import Weather from "./components/weather";
 import Favorites from "./components/favorites";
