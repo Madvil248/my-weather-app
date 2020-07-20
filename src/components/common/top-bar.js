@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { toggleView, switchTheme } from "../actions/index";
+import { toggleView, switchTheme } from "../../redux/actions/index";
 
 class TopBar extends Component {
   render() {

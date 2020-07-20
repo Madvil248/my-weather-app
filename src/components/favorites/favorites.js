@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CountryCard from "./country-card";
 import { connect } from "react-redux";
-import { setCity } from "../actions/index";
+import { setCity } from "../../redux/actions/index";
 
 class Favorites extends Component {
   render() {

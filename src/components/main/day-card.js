@@ -1,5 +1,5 @@
 import React from "react";
-import { getWeekDayNameByDate } from "../services/common";
+import { getWeekDayNameByDate } from "../../services/common";
 
 const DayCard = (props) => {
   const temperature = props.data.Temperature.Maximum.Value;

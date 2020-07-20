@@ -9,9 +9,9 @@ import { setCity } from "./redux/actions/index";
 import { SELECTED } from "./services/response";
 
 import Weather from "./components/main/weather";
-import Favorites from "./components/favorites";
+import Favorites from "./components/favorites/favorites";
 import Autocomplete from "./components/common/autocomplete";
-import TopBar from "./components/top-bar";
+import TopBar from "./components/common/top-bar";
 
 const TEL_AVIV_KEY = 215854;
 
