@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import DayCard from "../day-card";
 import Svgs from "../../styles/svgs";
 import { connect } from "react-redux";
-import { toggleFavorite } from "../../actions/index";
+import { toggleFavorite } from "../../redux/actions/index";
 import { toggleFav } from "../../api/main";
 
 class Weather extends Component {

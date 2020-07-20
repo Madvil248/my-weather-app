@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getLocationAutocomplete, getWeather } from "../../api/main";
-import { setCity } from "../../actions/index";
+import { setCity } from "../../redux/actions/index";
 import "../styles/autocomplete.css";
 
 export class Autocomplete extends Component {

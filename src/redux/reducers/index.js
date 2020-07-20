@@ -1,5 +1,5 @@
 import * as types from "../actions/actionTypes";
-import { SELECTED } from "../services/response";
+import { SELECTED } from "../../services/response";
 
 var initialState = {
   currentView: 0,
@@ -21,8 +21,7 @@ export default function mainReducer(state = initialState, action) {
       return Object.assign({}, state, {
         favorites: action.data,
         isFav:
-          action.data.filter((e) => e.Key === state.selected.Key).length >
-          0,
+          action.data.filter((e) => e.Key === state.selected.Key).length > 0,
       });
     case types.SET_CITY:
       return Object.assign({}, state, {

@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import { connect } from "react-redux";
 import { getWeather } from "./api/main";
-import { setCity } from "./actions/index";
+import { setCity } from "./redux/actions/index";
 import { SELECTED } from "./services/response";
 
 import Weather from "./components/main/weather";
