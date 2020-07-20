@@ -8,9 +8,9 @@ import { getWeather } from "./api/main";
 import { setCity } from "./actions/index";
 import { SELECTED } from "./services/response";
 
-import Weather from "./components/weather";
+import Weather from "./components/main/weather";
 import Favorites from "./components/favorites";
-import Autocomplete from "./components/autocomplete";
+import Autocomplete from "./components/common/autocomplete";
 import TopBar from "./components/top-bar";
 
 const TEL_AVIV_KEY = 215854;
